@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="">
+    <!-- Include FontAwesome CDN in the <head> for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
+                url('Screenshot%202025-01-30%20233743.png');
+            background-size: auto;
+            color: white;
+            /* Ensures repeating works */
+            background-repeat: repeat;
+            /* Repeats the image */
+            background-position: top left;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        }
+
+
+        /* Header */
+  /* Header */
+        /* Make the header sticky */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+         background: linear-gradient(to bottom, #000000e0, #333333e0); 
+            color: #10375C;
+            position: fixed;
+            /* Make it sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        /* Add a class for scrolled state */
+        header.scrolled {
+            background: #F5E6C4 !important;
+            /* Cream color */
+            color: black !important;
+        }
+
+        /* Change navigation links color when scrolled */
+        header.scrolled .nav-links ul li a {
+            color: black !important;
+        }
+
+        /* Change hamburger menu bars when scrolled */
+        header.scrolled .hamburger-menu .bar {
+            background-color: black !important;
+        }
+
+        /* Change dropdown background when scrolled */
+        header.scrolled .dropdown-content {
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Change dropdown link colors */
+        header.scrolled .dropdown-content a {
+            color: black !important;
+        }
+
+
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            /* Default height */
+            max-width: 250px;
+            /* Maximum width */
+            background-color: transparent !important;
+            overflow: hidden;
+        }
+
+        .logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ensures full visibility without distortion */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .logo {
+                height: 70px;
+                max-width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 60px;
+                max-width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 50px;
+                max-width: 150px;
+            }
+        }
+
+
+
+        /* Navigation Links */
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .call-now a {
+            text-decoration: none;
+            /* Remove the blue underline */
+        }
+
+        .call-now button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            /* Initially hide the hamburger menu on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 100;
+            height: auto;
+            padding: 5px;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger-menu.open .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* On mobile, hide desktop menu */
+            .nav-links {
+                display: none;
+                /* Hide the normal nav links */
+            }
+
+            /* Show the hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+                /* Show hamburger menu on mobile */
+            }
+
+            .call-now {
+                display: none;
+                /* Hide the 'Call Now' button on mobile */
+            }
+
+            /* Mobile Sliding Menu */
+            /* Mobile Sliding Menu */
+            .sliding-menu {
+                display: none;
+                position: fixed;
+                top: 4rem;
+                /* Adjusted to make the hamburger cross mark visible */
+                right: -250px;
+                width: 250px;
+                height: auto;
+                max-height: 60%;
+                background-color: #19140a;
+                padding-top: 60px;
+                transition: right 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+
+            .sliding-menu.open {
+                right: 0;
+                display: block;
+            }
+
+            .sliding-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sliding-menu ul li {
+                padding: 10px;
+                text-align: left;
+            }
+
+            .sliding-menu ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            .sliding-menu ul li button {
+                margin-top: 10px;
+                color: white;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Adjust the hamburger button */
+            .hamburger-menu .bar {
+                width: 30px;
+                height: 4px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 769px) {
+
+            /* On desktop, show the regular navigation links */
+            .nav-links {
+                display: flex;
+            }
+
+            /* Hide the hamburger menu on desktop */
+            .hamburger-menu {
+                display: none;
+            }
+
+            .call-now {
+                display: block;
+                /* Show the 'Call Now' button on desktop */
+            }
+
+            /* Ensure the sliding menu is hidden on desktop */
+            .sliding-menu {
+                display: none;
+            }
+        }
+
+        /* Existing styles remain unchanged */
+        /* Existing styles remain unchanged */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+            border-radius: 1rem;
+            /* Ensure the dropdown stays above other elements */
+        }
+
+        .dropdown-content {
+            border-radius: 1rem;
+            display: none;
+            position: absolute;
+            background: rgb(0 0 0 / 66%);
+            /* Semi-transparent background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* Higher z-index to bring dropdown above the Hero section */
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Subtle border */
+        }
+
+        /* Adjust dropdown links for better visibility */
+        .dropdown-content a {
+            color: #fff;
+            /* White text for contrast */
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .dropdown-content a:hover {
+            background-color: #BD7E30;
+            /* Soft hover effect */
+        }
+
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .sliding-menu .dropdown-content {
+            position: static;
+            display: none;
+            background-color: #333;
+        }
+
+        .sliding-menu .dropdown-content a {
+            color: white;
+        }
+
+        .sliding-menu .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+
+
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            /* background: #cd0c0c; */
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            border-radius: 10px;
+        }
+
+
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            /* transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px; */
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Pulsing effect (only applied to larger screens) */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: #b30505;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+        }
+
+        /* Apply pulse effect to larger screens */
+        @media (min-width: 769px) {
+            .button-86 {
+                animation: pulse 2s infinite;
+                /* Pulsing animation on larger screens */
+            }
+        }
+
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            /* Change from absolute to relative */
+            width: 100%;
+            /* Make it full-width */
+            background-color: #BD7E30;
+            color: white;
+            padding: 30px 15%;
+            box-sizing: border-box;
+            /* Ensures padding does not add extra width */
+        }
+
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer .column {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px;
+        }
+
+        /* Social Icons */
+        footer .column .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        footer .column .social-icons a {
+            color: white;
+            font-size: 40px;
+            /* Increased icon size */
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .column .social-icons a:hover {
+            color: #F3C623;
+        }
+
+        footer a {
+            color: white;
+            /* Make links white */
+            text-decoration: none;
+            /* Optional: removes underline from links */
+        }
+
+        footer a:hover {
+            color: #F3C623;
+            /* Optional: hover effect to change color when mouse is over the link */
+        }
+
+        /* Relative Links Section */
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            /* Gap between the heading and the list */
+        }
+
+        footer .column ul li {
+            margin: 15px 0;
+            position: relative;
+            font-size: 18px;
+            padding-left: 20px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        footer .column ul li:hover {
+            color: #F3C623;
+        }
+
+        footer .column ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(240 231 216);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            animation: bulletAnimation 0.5s forwards;
+        }
+
+        /* Animation for bullet points */
+        @keyframes bulletAnimation {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Horizontal Line Animation */
+        footer .line {
+
+            width: 100%;
+            height: 2px;
+            background-color: #636b46;
+            /* opacity: 0; */
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        @keyframes lineAnimation {
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        /* Address Section */
+        footer .column .address p {
+            margin: 10px 0;
+        }
+
+        footer .column .address .address-icon,
+        footer .column .address .phone-icon {
+            color: #F3C623;
+            margin-right: 10px;
+        }
+
+        footer .column .address a {
+            color: #F3C623;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .column .address p+p {
+            margin-top: 10px;
+            /* Add gap between the phone number and the address */
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #636b46;
+        }
+
+        .footer-bottom .line {
+            width: 80%;
+            height: 2px;
+            margin: 0 auto 10px auto;
+            background-color: #F3C623;
+            opacity: 0;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        .footer-bottom p {
+            color: white;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Ensure the footer bottom spans the full width */
+        .footer-bottom {
+            flex-basis: 100%;
+        }
+
+        /* Responsive Design */
+
+        /* For devices with max-width of 1200px (e.g., tablets, small laptops) */
+        @media (max-width: 1200px) {
+            footer {
+                padding: 30px 10%;
+            }
+
+            .footer-columns {
+                justify-content: space-evenly;
+            }
+
+            footer .column {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* For devices with max-width of 768px (e.g., tablets in portrait mode) */
+        @media (max-width: 768px) {
+            footer {
+                padding: 25px 5%;
+            }
+
+            .footer-columns {
+                justify-content: center;
+            }
+
+            footer .column {
+                flex: 1 1 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            footer .column .social-icons {
+                justify-content: center;
+            }
+
+            footer .column .social-icons a {
+                margin: 0 10px;
+                font-size: 30px;
+                /* Slightly smaller icons */
+            }
+
+            footer .column ul {
+                list-style-type: none;
+                /* Remove the bullet points */
+                padding-left: 0;
+                /* Remove padding */
+                margin: 0;
+                /* Remove any default margin */
+            }
+
+            footer .column ul li {
+                font-size: 16px;
+                /* Adjust font size for smaller screens */
+                margin: 10px 0;
+                /* Adjust margin between list items */
+                text-align: left;
+            }
+
+            footer .column .address p {
+                font-size: 14px;
+            }
+        }
+
+        footer .column .logo1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo1 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
+        }
+
+
+        /* For devices with max-width of 480px (e.g., smartphones) */
+        @media (max-width: 480px) {
+            footer {
+                padding: 20px 5%;
+            }
+
+            footer .column .logo img {
+                height: 40px;
+            }
+
+            footer .column .social-icons a {
+                font-size: 24px;
+                /* Smaller icons */
+            }
+
+            footer .column ul li {
+                font-size: 14px;
+            }
+
+            footer .column .address p {
+                font-size: 12px;
+            }
+
+            footer .footer-bottom p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adjust the max-width as needed */
+            footer {
+                padding-bottom: 80px;
+            }
+        }
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            /* Apply bounce animation */
+        }
+
+        .whatsapp-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-icon img:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect on hover */
+            transition: transform 0.3s;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                /* Start and end at the original position */
+            }
+
+            50% {
+                transform: translateY(-10px);
+                /* Move up */
+            }
+        }
+
+        /* Hide WhatsApp icon on mobile screens */
+        @media (max-width: 768px) {
+            .whatsapp-icon {
+                display: none;
+            }
+        }
+
+        /* Fixed Bottom Buttons Section */
+        /* Fixed Bottom Buttons Section */
+        .fixed-bottom-buttons {
+            display: none;
+            /* Hidden by default */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Show only on screens smaller than 768px */
+            .fixed-bottom-buttons {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgb(240 231 216);
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px 0;
+                z-index: 1000;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .button-call-now,
+            .button-whatsapp {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .5rem;
+                color: #FFFFFF;
+                font-size: 24px;
+                /* Adjust the size of the icons */
+                padding: 1rem 1.75rem;
+                text-decoration: none;
+                border: 0;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                width: 45%;
+                /* Adjust width to fit within the section */
+            }
+
+            .button-call-now:hover,
+            .button-whatsapp:hover {
+                background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+            }
+
+            .button-call-now {
+                background-color: #cda34f;
+                /* Custom color for call button */
+            }
+
+            .button-whatsapp {
+                background-color: #cda34f;
+                /* WhatsApp color */
+            }
+
+            .button-call-now:hover {
+                background-color: #636b46;
+            }
+
+            .button-whatsapp:hover {
+                background-color: #636b46;
+            }
+
+            /* Font Awesome Icons */
+            .fas,
+            .fab {
+                font-size: 24px;
+                /* Adjust icon size */
+            }
+        }
+
+
+
+
+        /* Popup Background */
+        #popupOverlay {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Popup Content */
+        #popupForm h2 {
+            text-align: center;
+            /* Horizontally centers the text */
+            margin: 0 0 20px 0;
+            /* Adds space below the heading */
+            color: #990000;
+        }
+
+        #popupForm {
+            background-image: linear-gradient(#e1c99cdc, rgba(240, 231, 216, 0.886)),
+                url('Screenshot%202025-01-30%20233743.png');
+            /* background: linear-gradient(135deg, #e1c99c, rgb(240 231 216)); */
+            /* Orange-yellow light gradient */
+            padding: 20px;
+            box-sizing: border-box;
+            /* Reduced padding */
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            /* Ensures close button stays inside */
+            max-height: 93vh;
+            /* Maximum height 80% of the viewport height */
+            height: auto;
+            overflow-y: auto;
+            /* Enable scrolling when content overflows */
+            /* Ensures the height adjusts based on content */
+        }
+
+        /* Label Styling */
+        label {
+            color: #636b46;
+            display: block;
+            /* Ensures label is a block element */
+        }
+
+        /* Close Button */
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            /* Close button inside the box */
+            right: 10px;
+            /* Adjusted to place inside the box */
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            /* Increased size */
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Form Fields */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 5px;
+            /* Reduced margin below fields */
+            border-radius: 5px;
+            border: 1px solid #636b46;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Textarea */
+        textarea {
+            height: 80px;
+            /* Reduced height for textarea */
+        }
+
+        /* Button Styles */
+        .button-8766 {
+            all: unset;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-8766::after,
+        .button-8766::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-8766::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-8766::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-8766:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-8766:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-8766:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+                /* Reduced padding */
+            }
+
+            #closeBtn {
+                font-size: 35px;
+                /* Slightly bigger close button on smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .button-8766 {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                #popupForm {
+                    max-height: 70vh;
+                    /* Limit the height on large screens */
+                }
+            }
+
+            #closeBtn {
+                font-size: 40px;
+                /* Close button even bigger for small screens */
+            }
+        }
+
+
+
+        /* Gallery Section */
+        .gallery565 {
+            padding: 50px 5%;
+            text-align: center;
+            max-width: 100%;
+            overflow-x: hidden;
+            /* Prevents horizontal scrolling */
+        }
+
+        /* Heading */
+        .gallery565 h1 {
+            text-align: center;
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 4rem;
+            color: #373f27;
+            font-family: Open Sans, sans-serif;
+        }
+
+        /* Horizontal Line Animation */
+        .underline {
+            width: 60px;
+            height: 3px;
+            background-color: #000;
+            margin: 20px auto;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        @keyframes lineAnimation {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 images per row */
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Gallery Item */
+        .gallery-item {
+            width: 100%;
+            max-width: 280px;
+            /* Ensures items don’t stretch */
+            height: 200px;
+            /* Adjusted for consistency */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Image Styling */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Effects */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Grid Adjustments */
+        @media (max-width: 1200px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 images per row */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 images per row */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+                /* 1 image per row */
+            }
+        }
+
+        /* Section Styles */
+
+        .responsive-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 40px 5%;
+            gap: 15px;
+            /* Reduced gap between columns */
+        }
+
+        .responsive-section .column {
+            flex: 1 1 calc(33.333% - 15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            background-color: rgb(240 231 216);
+            padding: 20px 20px 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .box h3 {
+            color: #373f27;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+
+
+        /* Ensure image fits the box */
+        .box img {
+            width: 100%;
+            /* Make image fill the width of the box */
+            height: 200px;
+            /* Fixed height */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .box hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 15px 0;
+        }
+
+        /* .box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            min-height: 50px;
+        } */
+
+        .box p {
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .button-91 {
+            color: #fff;
+            padding: 15px 25px;
+            /* Increased padding for height */
+            font-size: 14px;
+            /* Font size */
+            background-color: #BD7E30;
+            background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            font-weight: bold;
+            border: 0;
+            user-select: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            max-width: 180px;
+            /* Maximum width of the button */
+            width: 100%;
+            /* Make button width responsive */
+            text-align: center;
+            /* Center the text horizontally */
+
+            /* Flexbox to center content vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-91:hover {
+            background-color: #75973a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .responsive-section {
+                padding: 40px 5%;
+            }
+
+            .column {
+                flex: 1 1 100%;
+            }
+
+            .box {
+                max-width: 100%;
+                min-height: 350px;
+                padding: 20px 20px 40px 20px;
+            }
+
+            /* Adjust fixed image dimensions for small screens */
+            .box img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+
+        /* Add gap between rows */
+        .responsive-section+.responsive-section {
+            margin-top: 40px;
+        }
+
+        /* Styles for Types of Pooja Heading */
+        .types-pooja-heading {
+
+            text-align: center;
+            /* margin-bottom: 40px; */
+            /* Space between heading and responsive section */
+        }
+
+        .types-pooja-heading p {
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 1px;
+            flex-grow: 1;
+        }
+
+        .types-pooja-heading h2 {
+            color: #373f27;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+
+       
+      
+       
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 5%;
+            text-align: center;
+            border-radius: 8px;
+           
+        }
+
+        /* Contact Column */
+        .contact-section .contact-column {
+            padding: 20px;
+        }
+
+        /* Headings */
+        .contact-section .contact-column h4 {
+            color: #373f27;
+            font-size: clamp(1.5rem, 2vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Paragraphs */
+        .contact-section .contact-column p {
+            font-size: clamp(1rem, 1.2vw, 1.3rem);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #1d2833;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Icons with Shimmer Effect */
+        .contact-section .icon {
+            font-size: clamp(35px, 5vw, 60px);
+            color: transparent;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #F3C623, #EB8317, #F4F6FF);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Shimmer Animation */
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Links */
+        .contact-section a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-section a:hover {
+            color: #000;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-section {
+                padding: 4%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 3%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 2%;
+            }
+        }
+
+        .custom-hr {
+            width: 100%;
+            height: 20px;
+            margin-top: 2rem;
+            /* Adjust height as needed */
+            background: url('/separator-1.png') repeat-x;
+            border: none;
+        }
+
+
+        .section42 {
+            
+            padding: 5%;
+        }
+
+        .section42-container {
+            padding-top: 5rem;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .section42-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .section42-right {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section42-img {
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            max-height: 70vh;
+            border-radius: 10px;
+            transform: scale(0.95);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .section42-img:hover {
+            transform: scale(1);
+        }
+
+        .section42-heading {
+            color: #BD7E30;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, sans-serif;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: section42-fadeInUp 1s forwards;
+        }
+
+        .section42-text {
+            text-align: justify;
+            font-size: 1.2857rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #373f27;
+            font-family: Open Sans, sans-serif;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: section42-fadeInUp 1s 0.3s forwards;
+        }
+
+        @keyframes section42-fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .section42-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .section42-right {
+                max-width: 100%;
+            }
+
+            .section42-img {
+                max-width: 80%;
+                transform: scale(1);
+            }
+
+            .section42-left {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section42-img {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section42 {
+                padding: 8%;
+            }
+
+            .section42-heading {
+                font-size: 2rem;
+            }
+
+            .section42-text {
+                font-size: 1.1rem;
+            }
+
+            .section42-img {
+                max-width: 100%;
+            }
+        }
+        .thank-you {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .thank-you h1, .thank-you p {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .thank-you h1 {
+            font-size: 2rem;
+            color: black;
+            margin-bottom: 10px;
+            animation-delay: 0.3s;
+        }
+        .thank-you p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            animation-delay: 0.6s;
+        }
+        .thank-you .emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+        .thank-you button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.9s;
+        }
+        .thank-you button:hover {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @media (max-width: 600px) {
+            .thank-you h1 {
+                font-size: 1.5rem;
+            }
+            .thank-you p {
+                font-size: 1rem;
+            }
+            .thank-you .emoji {
+                font-size: 2rem;
+            }
+            .thank-you button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img id="logoImage" src="MNB Logo PNG white.png" alt="Logo">
+            </a>
+        </div>
+
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Pooja</a>
+                    <div class="dropdown-content">
+                        <a href="Pooja2.html">Narayanbali Pooja
+                        </a>
+                        <a href="Pooja.html">Nagabali Pooja</a>
+                        <!-- <a href="#">Nagabali Pooja</a> -->
+                        <a href="Pooja1.html">PitruDosha Nivarana
+                        </a>
+                        <a href="Pooja3.html">Thripindi Shraddha
+                        </a>
+                    </div>
+                </li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="call-now">
+            <a href="tel:+917019089159">
+                <button class="button-86" role="button">Call Now</button>
+            </a>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="sliding-menu" id="slidingMenu">
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Pooja</a>
+                <div class="dropdown-content">
+                    <a href="Pooja2.html">Narayanbali Pooja
+                    </a>
+                    <a href="Pooja.html">Nagabali Pooja</a>
+                    <!-- <a href="#">Nagabali Pooja</a> -->
+                    <a href="Pooja1.html">PitruDosha Nivarana
+                    </a>
+                    <a href="Pooja3.html">Thripindi Shraddha
+                    </a>
+                </div>
+            </li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="tel:+917019089159"><button class="button-86">Call Now</button></a></li>
+        </ul>
+    </div>
+   
+
+
+    <div class="thank-you">
+        <div class="emoji">🙏</div>
+        <h1>Subhám bhavatu</h1>
+        <p>Your booking details have been successfully sent</p>
+        <!-- <button onclick="window.location.href='/'">Go Home</button> -->
+    </div>
+ 
+
+    <hr class="custom-hr">
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-columns">
+            <!-- First Column -->
+            <div class="column">
+                <div class="logo1">
+                    <img src="MNB Logo PNG black.png
+                    " alt="Logo">
+                </div>
+                <div class="social-icons">
+                    <!-- <a href="https://facebook.com" class="fa-brands fa-facebook"></a>
+                    <a href="https://twitter.com" class="fa-brands fa-twitter"></a> -->
+                    <a href="https://instagram.com" class="fa-brands fa-instagram"></a>
+                </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class="column">
+                <p>Relative Links</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Pooja.html">Poojas</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+                <!-- <div class="line"></div> Horizontal line below the links -->
+            </div>
+
+            <!-- Third Column -->
+            <div class="column">
+                <p>Address</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <div class="address">
+                    <p><span class="address-icon">🏠</span>Shadakshari nilaya 
+                        Bele hittal road. Gokarna, Karnataka 581326</p>
+                    <p><span class="phone-icon">📞</span><a href="tel:+917019089159"
+                            style="color: yellow;">7019089159</a></p>
+                </div>
+                <!-- <div class="line"></div> Horizontal line below address -->
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <!-- <div class="line"></div> Horizontal line above the copyright -->
+            <p>&copy; 2025 MokshaNarayanabali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/7019089159" target="_blank" class="whatsapp-icon" title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+    </a>
+
+    <!-- Fixed Bottom Buttons -->
+    <section class="fixed-bottom-buttons">
+        <button class="button-call-now" onclick="location.href='tel:+917019089159'">
+            <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+        </button>
+        <button class="button-whatsapp" onclick="location.href='https://wa.me/7019089159'">
+            <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp icon -->
+        </button>
+    </section>
+
+    <!-- testimonial  -->
+    <script>
+        const testimonials = [
+            { img: "1736422675161.jpg", text: "A truly divine experience! The pooja was performed with great devotion, and I felt immense peace afterward. 🙏✨ ", name: "- Rajesh Iyer, Chennai" },
+            { img: "1736422675161.jpg", text: "After the Narayana Bali pooja, we noticed a positive shift in our family’s well-being. Grateful for the guidance! 🌿🕉️ ", name: "- Ananya Sharma, Bangalore" },
+            { img: "1736422675161.jpg", text: "The rituals were conducted with such authenticity and precision. We felt deeply connected to our ancestors.🔥🪔 ", name: "- Sandeep Kulkarni, Pune" },
+
+            { img: "1736422675161.jpg", text: "Excellent arrangements and a spiritually uplifting experience. Highly recommend these services in Gokarna! 🌊🏞️ ", name: "- Deepika Rao, Hyderabad" },
+            { img: "1736422675161.jpg", text: "I had been facing obstacles for years, but after the Pitrudosha pooja, everything started falling into place. 🌿🙏 ", name: "- Venkatesh Bhat, Mangalore" },
+            { img: "1736422675161.jpg", text: "The priests performed the Nagabali pooja with great sincerity. We felt truly blessed after the ceremony! 🐍🔥 ", name: "- Priya Nair, Kochi" },
+
+            { img: "1736422675161.jpg", text: "A well-organized and deeply spiritual experience. Thank you for helping us complete this important ritual. 🙌🕉️ ", name: "- Ravi Verma, Delhi" },
+            { img: "1736422675161.jpg", text: "The energy and atmosphere during the pooja were divine. We left with a sense of relief and fulfillment. 💫🪔 ", name: "- Meera Joshi, Mumbai" },
+            { img: "1736422675161.jpg", text: "Traveling to Gokarna for the pooja was the best decision. The experience brought peace and harmony to our lives. 🌊🕊️ ", name: "- Arun Deshmukh, Nagpur" },
+            { img: "1736422675161.jpg", text: "I highly recommend these pooja services for anyone seeking ancestral blessings and relief from doshas. 🕉️✨ ", name: "- Kavitha Reddy, Mysore" },
+
+        ];
+
+        let currentIndex = 0;
+        function updateTestimonial() {
+            document.getElementById("testimonial-img").src = testimonials[currentIndex].img;
+            document.getElementById("testimonial-text").innerText = testimonials[currentIndex].text;
+            document.getElementById("testimonial-name").innerText = testimonials[currentIndex].name;
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        }
+
+        setInterval(nextTestimonial, 3000);
+    </script>
+
+
+    <!-- FontAwesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            slidingMenu.classList.toggle('open');
+            hamburgerMenu.classList.toggle('open');
+        }
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            const logoImage = document.getElementById("logoImage");
+
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+                logoImage.src = "MNB Logo PNG black.png"; // Change to your scrolled logo
+            } else {
+                header.classList.remove("scrolled");
+                logoImage.src = "MNB Logo PNG white.png"; // Original logo
+            }
+        });
+
+        // Function to toggle dropdown within the sliding menu
+        function toggleDropdown(event) {
+            const dropdown = event.target.closest('.dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        }
+
+        // Close the menu if the user clicks outside the sliding menu or hamburger menu
+        document.addEventListener('click', function (event) {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+
+            // Close the sliding menu if clicked outside
+            if (!slidingMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                slidingMenu.classList.remove('open');
+                hamburgerMenu.classList.remove('open');
+            }
+
+            // Ensure dropdown works properly within the sliding menu
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+                    dropdown.classList.remove('open');
+                });
+            }
+        });
+
+        // Event listener to open the dropdown on click
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', toggleDropdown);
+        });
+
+    </script>
+
+
+    <!-- popup -->
+    <!-- popup -->
+    <script>
+        // Show the popup after 10 seconds on page load
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('popupOverlay').style.display = 'flex';
+            }, 10000); // Show popup after 10 seconds
+        };
+
+        // Show the popup when "Book Now" button is clicked
+        function showPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        // Close Button Functionality
+        document.getElementById('closeBtn').onclick = function () {
+            document.getElementById('popupOverlay').style.display = 'none';
+        };
+
+        // WhatsApp Background Integration (No Redirection)
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const poojaType = document.getElementById('poojaType').value.trim();
+            const date = document.getElementById('date').value.trim();
+            const details = document.getElementById('details').value.trim();
+
+            if (name && contact && poojaType && date) {
+                const message = `Name: ${name}\nContact: ${contact}\nPooja Type: ${poojaType}\nPreferred Date: ${date}\nDetails: ${details}`;
+                const whatsappURL = `https://wa.me/918310214624?text=${encodeURIComponent(message)}`;
+
+                // Send data to WhatsApp API in the background (No redirection)
+                fetch(whatsappURL, { method: "GET", mode: "no-cors" })
+                    .catch(error => console.error("WhatsApp API Error:", error));
+            }
+        }
+
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+            document.getElementById("form-submit").disabled = true;
+
+            var formData = new FormData(this);
+            var formDataString = new URLSearchParams(formData).toString();
+
+            fetch("https://script.google.com/macros/s/AKfycbySXVyszgNW29sY7oLuSdoQ63byLrMBloSL8nU66p84d0Zu84MRmJR1UYUgsXYsv7-9/exec", {
+                method: "POST",
+                body: formDataString,
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log("Response:", data);
+                    if (data === "Success") {
+                        alert("Booking request sent successfully!");
+                        window.location.href = "thankyou.html"; // Redirect to Thank You page
+                    } else {
+                        alert("Error sending request. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Error sending request.");
+                });
+
+        });
+
+       
+    </script>
+    <script>
+        (function () {
+            const images = [
+                "1736422675210.jpg",
+                "1736422675151.jpg",
+                "1736422675161.jpg"
+            ];
+
+            let currentIndex = 0;
+
+            function changeImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                document.getElementById("sliderImage").src = images[currentIndex];
+            }
+
+            setInterval(changeImage, 5000);
+        })();
+    </script>
+     /* JS to handle the scroll event */
+     <script>
+         window.addEventListener("scroll", function () {
+             let header = document.querySelector("header");
+             if (window.scrollY > 50) { // When scrolling down 50px
+                 header.classList.add("scrolled");
+             } else {
+                 header.classList.remove("scrolled");
+             }
+         });
+     </script>
+
+    <!-- testimonial -->
+
+
+
+    <!-- disbling th right click -->
+    <!-- <script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script> -->
+
+</body>
+
+</html>

@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagabali Pooja
+    </title>
+    <link rel="stylesheet" href="">
+    <!-- Include FontAwesome CDN in the <head> for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
+                url('Screenshot%202025-01-30%20233743.png');
+            background-size: auto;
+            color: #636b46;
+            /* Ensures repeating works */
+            background-repeat: repeat;
+            /* Repeats the image */
+            background-position: top left;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        }
+
+        /* Header */
+        /* Make the header sticky */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+         background: linear-gradient(to bottom, #000000e0, #333333e0); 
+            color: #10375C;
+            position: fixed;
+            /* Make it sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        /* Add a class for scrolled state */
+        header.scrolled {
+            background: #F5E6C4 !important;
+            /* Cream color */
+            color: black !important;
+        }
+
+        /* Change navigation links color when scrolled */
+        header.scrolled .nav-links ul li a {
+            color: black !important;
+        }
+
+        /* Change hamburger menu bars when scrolled */
+        header.scrolled .hamburger-menu .bar {
+            background-color: black !important;
+        }
+
+        /* Change dropdown background when scrolled */
+        header.scrolled .dropdown-content {
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Change dropdown link colors */
+        header.scrolled .dropdown-content a {
+            color: black !important;
+        }
+
+
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            /* Default height */
+            max-width: 250px;
+            /* Maximum width */
+            background-color: transparent !important;
+            overflow: hidden;
+        }
+
+        .logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ensures full visibility without distortion */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .logo {
+                height: 70px;
+                max-width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 60px;
+                max-width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 50px;
+                max-width: 150px;
+            }
+        }
+
+
+
+        /* Navigation Links */
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .call-now a {
+            text-decoration: none;
+            /* Remove the blue underline */
+        }
+
+        .call-now button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            /* Initially hide the hamburger menu on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 100;
+            height: auto;
+            padding: 5px;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger-menu.open .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* On mobile, hide desktop menu */
+            .nav-links {
+                display: none;
+                /* Hide the normal nav links */
+            }
+
+            /* Show the hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+                /* Show hamburger menu on mobile */
+            }
+
+            .call-now {
+                display: none;
+                /* Hide the 'Call Now' button on mobile */
+            }
+
+            /* Mobile Sliding Menu */
+            /* Mobile Sliding Menu */
+            .sliding-menu {
+                display: none;
+                position: fixed;
+                top: 4rem;
+                /* Adjusted to make the hamburger cross mark visible */
+                right: -250px;
+                width: 250px;
+                height: auto;
+                max-height: 60%;
+                background-color: #19140a;
+                padding-top: 60px;
+                transition: right 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+
+            .sliding-menu.open {
+                right: 0;
+                display: block;
+            }
+
+            .sliding-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sliding-menu ul li {
+                padding: 10px;
+                text-align: left;
+            }
+
+            .sliding-menu ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            .sliding-menu ul li button {
+                margin-top: 10px;
+                color: white;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Adjust the hamburger button */
+            .hamburger-menu .bar {
+                width: 30px;
+                height: 4px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 769px) {
+
+            /* On desktop, show the regular navigation links */
+            .nav-links {
+                display: flex;
+            }
+
+            /* Hide the hamburger menu on desktop */
+            .hamburger-menu {
+                display: none;
+            }
+
+            .call-now {
+                display: block;
+                /* Show the 'Call Now' button on desktop */
+            }
+
+            /* Ensure the sliding menu is hidden on desktop */
+            .sliding-menu {
+                display: none;
+            }
+        }
+
+        /* Existing styles remain unchanged */
+        /* Existing styles remain unchanged */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+            border-radius: 1rem;
+            /* Ensure the dropdown stays above other elements */
+        }
+
+        .dropdown-content {
+            border-radius: 1rem;
+            display: none;
+            position: absolute;
+            background: rgb(0 0 0 / 66%);
+            /* Semi-transparent background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* Higher z-index to bring dropdown above the Hero section */
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Subtle border */
+        }
+
+        /* Adjust dropdown links for better visibility */
+        .dropdown-content a {
+            color: #fff;
+            /* White text for contrast */
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .dropdown-content a:hover {
+            background-color: #BD7E30;
+            /* Soft hover effect */
+        }
+
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .sliding-menu .dropdown-content {
+            position: static;
+            display: none;
+            background-color: #333;
+        }
+
+        .sliding-menu .dropdown-content a {
+            color: white;
+        }
+
+        .sliding-menu .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+
+
+
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            /* background: #cd0c0c; */
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            border-radius: 10px;
+        }
+
+
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            /* transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px; */
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Pulsing effect (only applied to larger screens) */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: #b30505;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+        }
+
+        /* Apply pulse effect to larger screens */
+        @media (min-width: 769px) {
+            .button-86 {
+                animation: pulse 2s infinite;
+                /* Pulsing animation on larger screens */
+            }
+        }
+
+
+        footer .column .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 95px;
+            /* Fixed width */
+            height: 90px;
+            /* Make width and height equal */
+            background-color: #F5E6C4;
+            /* Cream background */
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            footer .column .logo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer .column .logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            /* background: #cd0c0c; */
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            border-radius: 10px;
+        }
+
+
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            /* transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px; */
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Pulsing effect (only applied to larger screens) */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: #b30505;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+        }
+
+        /* Apply pulse effect to larger screens */
+        @media (min-width: 769px) {
+            .button-86 {
+                animation: pulse 2s infinite;
+                /* Pulsing animation on larger screens */
+            }
+        }
+
+
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            /* Change from absolute to relative */
+            width: 100%;
+            /* Make it full-width */
+            background-color: #BD7E30;
+            color: white;
+            padding: 30px 15%;
+            box-sizing: border-box;
+            /* Ensures padding does not add extra width */
+        }
+
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer .column {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px;
+        }
+
+        /* Social Icons */
+        footer .column .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        footer .column .social-icons a {
+            color: white;
+            font-size: 40px;
+            /* Increased icon size */
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .column .social-icons a:hover {
+            color: #F3C623;
+        }
+
+        footer a {
+            color: white;
+            /* Make links white */
+            text-decoration: none;
+            /* Optional: removes underline from links */
+        }
+
+        footer a:hover {
+            color: #F3C623;
+            /* Optional: hover effect to change color when mouse is over the link */
+        }
+
+        /* Relative Links Section */
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            /* Gap between the heading and the list */
+        }
+
+        footer .column ul li {
+            margin: 15px 0;
+            position: relative;
+            font-size: 18px;
+            padding-left: 20px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        footer .column ul li:hover {
+            color: #F3C623;
+        }
+
+        footer .column ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(240 231 216);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            animation: bulletAnimation 0.5s forwards;
+        }
+
+        /* Animation for bullet points */
+        @keyframes bulletAnimation {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Horizontal Line Animation */
+        footer .line {
+
+            width: 100%;
+            height: 2px;
+            background-color: #636b46;
+            /* opacity: 0; */
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        @keyframes lineAnimation {
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        /* Address Section */
+        footer .column .address p {
+            margin: 10px 0;
+        }
+
+        footer .column .address .address-icon,
+        footer .column .address .phone-icon {
+            color: #F3C623;
+            margin-right: 10px;
+        }
+
+        footer .column .address a {
+            color: #F3C623;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .column .address p+p {
+            margin-top: 10px;
+            /* Add gap between the phone number and the address */
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #636b46;
+        }
+
+        .footer-bottom .line {
+            width: 80%;
+            height: 2px;
+            margin: 0 auto 10px auto;
+            background-color: #F3C623;
+            opacity: 0;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        .footer-bottom p {
+            color: white;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Ensure the footer bottom spans the full width */
+        .footer-bottom {
+            flex-basis: 100%;
+        }
+
+        /* Responsive Design */
+
+        /* For devices with max-width of 1200px (e.g., tablets, small laptops) */
+        @media (max-width: 1200px) {
+            footer {
+                padding: 30px 10%;
+            }
+
+            .footer-columns {
+                justify-content: space-evenly;
+            }
+
+            footer .column {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* For devices with max-width of 768px (e.g., tablets in portrait mode) */
+        @media (max-width: 768px) {
+            footer {
+                padding: 25px 5%;
+            }
+
+            .footer-columns {
+                justify-content: center;
+            }
+
+            footer .column {
+                flex: 1 1 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            footer .column .social-icons {
+                justify-content: center;
+            }
+
+            footer .column .social-icons a {
+                margin: 0 10px;
+                font-size: 30px;
+                /* Slightly smaller icons */
+            }
+
+            footer .column ul {
+                list-style-type: none;
+                /* Remove the bullet points */
+                padding-left: 0;
+                /* Remove padding */
+                margin: 0;
+                /* Remove any default margin */
+            }
+
+            footer .column ul li {
+                font-size: 16px;
+                /* Adjust font size for smaller screens */
+                margin: 10px 0;
+                /* Adjust margin between list items */
+                text-align: left;
+            }
+
+            footer .column .address p {
+                font-size: 14px;
+            }
+        }
+
+        footer .column .logo1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo1 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
+        }
+
+
+        /* For devices with max-width of 480px (e.g., smartphones) */
+        @media (max-width: 480px) {
+            footer {
+                padding: 20px 5%;
+            }
+
+            footer .column .logo img {
+                height: 40px;
+            }
+
+            footer .column .social-icons a {
+                font-size: 24px;
+                /* Smaller icons */
+            }
+
+            footer .column ul li {
+                font-size: 14px;
+            }
+
+            footer .column .address p {
+                font-size: 12px;
+            }
+
+            footer .footer-bottom p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adjust the max-width as needed */
+            footer {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            /* Apply bounce animation */
+        }
+
+        .whatsapp-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-icon img:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect on hover */
+            transition: transform 0.3s;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                /* Start and end at the original position */
+            }
+
+            50% {
+                transform: translateY(-10px);
+                /* Move up */
+            }
+        }
+
+        /* Hide WhatsApp icon on mobile screens */
+        @media (max-width: 768px) {
+            .whatsapp-icon {
+                display: none;
+            }
+        }
+
+        /* Fixed Bottom Buttons Section */
+        .fixed-bottom-buttons {
+            display: none;
+            /* Hidden by default */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Show only on screens smaller than 768px */
+            .fixed-bottom-buttons {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgb(240 231 216);
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px 0;
+                z-index: 1000;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .button-call-now,
+            .button-whatsapp {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .5rem;
+                color: #FFFFFF;
+                font-size: 24px;
+                /* Adjust the size of the icons */
+                padding: 1rem 1.75rem;
+                text-decoration: none;
+                border: 0;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                width: 45%;
+                /* Adjust width to fit within the section */
+            }
+
+            .button-call-now:hover,
+            .button-whatsapp:hover {
+                background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+            }
+
+            .button-call-now {
+                background-color: #cda34f;
+                /* Custom color for call button */
+            }
+
+            .button-whatsapp {
+                background-color: #cda34f;
+                /* WhatsApp color */
+            }
+
+            .button-call-now:hover {
+                background-color: #636b46;
+            }
+
+            .button-whatsapp:hover {
+                background-color: #636b46;
+            }
+
+            /* Font Awesome Icons */
+            .fas,
+            .fab {
+                font-size: 24px;
+                /* Adjust icon size */
+            }
+        }
+
+
+
+
+
+
+        /* Popup Background */
+        /* Popup Background */
+        #popupOverlay {
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Popup Content */
+        #popupForm h2 {
+            text-align: center;
+            /* Horizontally centers the text */
+            margin: 0 0 20px 0;
+            /* Adds space below the heading */
+            color: #990000;
+        }
+
+        #popupForm {
+            background-image: linear-gradient(#e1c99cdc, rgba(240, 231, 216, 0.886)),
+                url('Screenshot%202025-01-30%20233743.png');
+            /* background: linear-gradient(135deg, #e1c99c, rgb(240 231 216)); */
+            /* Orange-yellow light gradient */
+            padding: 20px;
+            box-sizing: border-box;
+            /* Reduced padding */
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            /* Ensures close button stays inside */
+            max-height: 93vh;
+            /* Maximum height 80% of the viewport height */
+            height: auto;
+            overflow-y: auto;
+            /* Enable scrolling when content overflows */
+            /* Ensures the height adjusts based on content */
+        }
+
+        /* Label Styling */
+        label {
+
+            display: block;
+            /* Ensures label is a block element */
+        }
+
+        /* Close Button */
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            /* Close button inside the box */
+            right: 10px;
+            /* Adjusted to place inside the box */
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            /* Increased size */
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Form Fields */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 5px;
+            /* Reduced margin below fields */
+            border-radius: 5px;
+            border: 1px solid #636b46;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Textarea */
+        textarea {
+            height: 80px;
+            /* Reduced height for textarea */
+        }
+
+        /* Button Styles */
+        .button-8766 {
+            all: unset;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-8766::after,
+        .button-8766::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-8766::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #636b46;
+            border-radius: 10px;
+        }
+
+        .button-8766::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-8766:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-8766:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-8766:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+                /* Reduced padding */
+            }
+
+            #closeBtn {
+                font-size: 35px;
+                /* Slightly bigger close button on smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .button-8766 {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                #popupForm {
+                    max-height: 70vh;
+                    /* Limit the height on large screens */
+                }
+            }
+
+            #closeBtn {
+                font-size: 40px;
+                /* Close button even bigger for small screens */
+            }
+        }
+
+
+        /* Hero Section */
+          /* Hero Section */
+          .hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            /* Adjusted height for better mobile compatibility */
+            background-color: rgb(240, 231, 216);
+            background-image: url('1736422675191.jpg');
+            /* Add your image path here */
+            background-size: cover;
+            /* Ensures the image covers the section */
+            background-position: center;
+            /* Centers the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            /* White text color */
+            padding: 0;
+        }
+
+        /* Semi-transparent overlay for better text visibility */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* Dark overlay with transparency */
+            z-index: 1;
+            /* Places overlay below the text */
+        }
+
+        /* Hero content */
+        .hero-content {
+            max-width: 90%;
+            /* Adjusts width for better responsiveness */
+            opacity: 1;
+            /* Ensures visibility */
+            transform: translateY(0);
+            z-index: 2;
+            /* Makes sure content stays above overlay */
+            padding-top: 100px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 3D Text Effect with Shadow */
+        .hero-content h1,
+        .hero-content p {
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), -1px -1px 2px rgba(255, 255, 255, 0.5);
+            /* Shadow effect to create contrast */
+        }
+
+        /* Typography Adjustments */
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                height: 50vh;
+                /* Adjusted height for tablets */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 55vh;
+                /* Adjusted height for smaller screens */
+                padding: 0 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 40vh;
+                /* Adjusted height for mobile screens */
+                padding: 0 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+                /* Add margin to prevent text overlap */
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+
+
+        /* Section Styles */
+        .section {
+            position: relative;
+            background-image: url('Screenshot\ 2025-01-30\ 233743.png');
+            padding: 2% 5%;
+            color: #1d2833;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.856);
+            /* White overlay with 50% opacity */
+            z-index: -1;
+            /* Makes sure the overlay stays behind the content */
+        }
+
+
+        .section p {
+            text-align: justify;
+            font-size: 1.2857142857rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+            line-height: 1.875rem;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        .section h1 {
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: .5rem;
+            color: #1d2833;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #BD7E30;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .h3 {
+            margin-top: 4rem;
+            color: #373f27;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 3rem;
+            margin-bottom: 2rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        /* Orange Tick List */
+        /* Orange Tick List */
+        .tick-list {
+            list-style: none;
+            /* Remove default bullet points */
+            padding-left: 0;
+            /* Remove default padding */
+        }
+
+        .tick-list li {
+            position: relative;
+            padding-left: 30px;
+            /* Space for the tick mark */
+            margin-bottom: 8px;
+            /* Space between list items */
+            font-size: 1.2rem;
+            color: #333;
+            /* Text color */
+            line-height: 1.5;
+            /* Improves readability */
+        }
+
+        .tick-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 34px;
+            /* Increased size */
+            height: 34px;
+            /* Increased size */
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23BD7E30"><path d="M9 16.17l-4.17-4.17-1.41 1.41 5.58 5.58 10.59-10.59-1.41-1.41z"/></svg>') no-repeat center center;
+            background-size: contain;
+        }
+
+
+        /* Scroll Reveal Effect */
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .hero,
+            .section {
+                padding: 5%;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 60vh;
+                /* Increased height for mobile screens */
+                padding: 0 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+                /* Add margin to prevent text overlap */
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                text-align: justify;
+            }
+        }
+
+
+        .custom-hr {
+            width: 100%;
+            height: 20px;
+            /* Adjust height as needed */
+            background: url('separator-1.png') repeat-x;
+            border: none;
+        }
+        .section-container12309 {
+            padding: .2%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            /* background-color: #f9f9f9; */
+        }
+
+        .button-wrapper12309 {
+            text-align: left;
+        }
+
+        .button-8612309 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            border-radius: 10px;
+        }
+
+        .button-8612309::after,
+        .button-8612309::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-8612309::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-8612309::after {
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-8612309:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-8612309:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-8612309:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (min-width: 769px) {
+            .button-8612309 {
+                animation: pulse 2s infinite;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function revealOnScroll() {
+                let elements = document.querySelectorAll(".section, .hero-content");
+
+                elements.forEach(element => {
+                    let position = element.getBoundingClientRect().top;
+                    let windowHeight = window.innerHeight;
+                    if (position < windowHeight - 100) {
+                        element.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll(); // Run once to check visibility
+        });
+    </script>
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img id="logoImage" src="MNB Logo PNG white.png" alt="Logo">
+            </a>
+        </div>
+
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Pooja</a>
+                    <div class="dropdown-content">
+                        <a href="Pooja2.html">Narayanbali Pooja
+                        </a>
+                        <a href="Pooja.html">Nagabali Pooja</a>
+                        <!-- <a href="#">Nagabali Pooja</a> -->
+                        <a href="Pooja1.html">PitruDosha Nivarana
+                        </a>
+                        <a href="Pooja3.html">Thripindi Shraddha
+                        </a>
+                    </div>
+                </li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="call-now">
+            <a href="tel:+917019089159">
+                <button class="button-86" role="button">Call Now</button>
+            </a>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="sliding-menu" id="slidingMenu">
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Pooja</a>
+                <div class="dropdown-content">
+                    <a href="Pooja2.html">Narayanbali Pooja
+                    </a>
+                    <a href="Pooja.html">Nagabali Pooja</a>
+                    <!-- <a href="#">Nagabali Pooja</a> -->
+                    <a href="Pooja1.html">PitruDosha Nivarana
+                    </a>
+                    <a href="Pooja3.html">Thripindi Shraddha
+                    </a>
+                </div>
+            </li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="tel:+917019089159"><button class="button-86">Call Now</button></a></li>
+        </ul>
+    </div>
+
+   
+    <div id="popupOverlay">
+        <div id="popupForm">
+            <button id="closeBtn">&times;</button>
+            <h2>Pooja Booking Form</h2>
+            <form id="form" method="post">
+                <label>Name:</label><br>
+                <input type="text" name="name" id="name" required><br>
+                <label>Contact Number:</label><br>
+                <input type="text" name="contact" id="contact" required><br>
+                <label>Type of Pooja:</label><br>
+                <select name="pooja" id="poojaType">
+                    <option value="Narayanbali">Narayanbali</option>
+                    <option value="Nagabali">Nagabali</option>
+                    <option value="PitruDosha Nivarana">PitruDosha Nivarana</option>
+                    <option value="PitruDosha Nivarana">Thripindi Shraddha</option>
+                </select><br>
+                <label>Preferred Date:</label><br>
+                <input type="date" name="date" id="date" required><br>
+                <label>Additional Details (Optional):</label><br>
+                <textarea name="details" id="details"></textarea><br>
+                <button type="submit" class="button-8766" id="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nagabali Pooja</h1>
+            <p>Gokarna stands out as a sacred destination for Nagabali Pooja due to its deep spiritual energy and
+                historical importance. The town's Mahabaleshwar Temple, where Lord Shiva's Atma-Linga resides, is
+                believed to be a powerful site for resolving curses and doshas caused by harming serpents or disrupting
+                their sacred habitats.</p>
+        </div>
+    </section>
+
+    <hr class="custom-hr">
+    <!-- Nagabali Section -->
+    <section class="section">
+        <h2 class="section-title">Nagabali Pooja
+        </h2>
+        <div class="section-container12309">
+            <div class="button-wrapper12309">
+                <button class="button-8612309" onclick="showPopup()">Book Pooja</button>
+            </div>
+        </div>
+        <div>
+            <h3 class="h3">What is it ?</h3>
+            <p>Nagabali Pooja is a ritual performed to mitigate curses or doshas caused by harming snakes, either
+                intentionally or accidentally. It is also conducted to appease serpent deities.</p>
+        </div>
+        <div>
+            <h3 class="h3">How is it Performed ?</h3>
+            <p>The pooja involves rituals to invoke serpent deities and seek their forgiveness. Offerings of milk and
+                flowers are made, and specific mantras are chanted to remove the dosha</p>
+        </div>
+        <div>
+            <h3 class="h3">Benefits :</h3>
+            <ul class="tick-list">
+                <li>Resolves issues related to delayed marriages, infertility, or financial troubles.</li>
+                <li>Removes the karmic effects of harming or disrespecting serpent deities.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr class="custom-hr">
+    <!-- PitruDosha Nivarana Section
+    <section class="section">
+        <h2 class="section-title">PitruDosha Nivarana</h2>
+        <div>
+            <h3>What is it?</h3>
+            <p>PitruDosha Nivarana is a remedial ritual for resolving ancestral doshas, which can manifest as struggles
+                in health, relationships, or finances due to the dissatisfaction of forefathers.</p>
+        </div>
+        <div>
+            <h3>How is it Performed?</h3>
+            <p>The ritual includes offering pindas (sacred food offerings) to ancestors, performing Shraddha (ancestral
+                rites), and invoking their blessings through specific Vedic chants.</p>
+        </div>
+        <div>
+            <h3>Benefits:</h3>
+            <ul class="tick-list">
+                <li>Eliminates ancestral karmic imbalances.</li>
+                <li>Brings peace to the departed and prosperity to the living family members.</li>
+                <li>Ensures smoother generational transitions.</li>
+            </ul>
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-columns">
+            <!-- First Column -->
+            <div class="column">
+                <div class="logo1">
+                    <img src="MNB Logo PNG black.png
+                " alt="Logo">
+                </div>
+                <div class="social-icons">
+                    <!-- <a href="https://facebook.com" class="fa-brands fa-facebook"></a>
+                <a href="https://twitter.com" class="fa-brands fa-twitter"></a> -->
+                    <a href="https://instagram.com" class="fa-brands fa-instagram"></a>
+                </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class="column">
+                <p>Relative Links</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Pooja.html">Poojas</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+                <!-- <div class="line"></div> Horizontal line below the links -->
+            </div>
+
+            <!-- Third Column -->
+            <div class="column">
+                <p>Address</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <div class="address">
+                    <p><span class="address-icon">🏠</span>Shadakshari nilaya
+                        Bele hittal road. Gokarna, Karnataka 581326</p>
+                    <p><span class="phone-icon">📞</span><a href="tel:+917019089159"
+                            style="color: yellow;">7019089159</a></p>
+                </div>
+                <!-- <div class="line"></div> Horizontal line below address -->
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <!-- <div class="line"></div> Horizontal line above the copyright -->
+            <p>&copy; 2025 MokshaNarayanabali. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/7019089159" target="_blank" class="whatsapp-icon" title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+    </a>
+
+
+    <!-- Fixed Bottom Buttons -->
+    <section class="fixed-bottom-buttons">
+        <button class="button-call-now" onclick="location.href='tel:+917019089159'">
+            <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+        </button>
+        <button class="button-whatsapp" onclick="location.href='https://wa.me/7019089159'">
+            <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp icon -->
+        </button>
+    </section>
+
+
+
+    <!-- FontAwesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            slidingMenu.classList.toggle('open');
+            hamburgerMenu.classList.toggle('open');
+        }
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            const logoImage = document.getElementById("logoImage");
+
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+                logoImage.src = "MNB Logo PNG black.png"; // Change to your scrolled logo
+            } else {
+                header.classList.remove("scrolled");
+                logoImage.src = "MNB Logo PNG white.png"; // Original logo
+            }
+        });
+
+        // Function to toggle dropdown within the sliding menu
+        function toggleDropdown(event) {
+            const dropdown = event.target.closest('.dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        }
+
+        // Close the menu if the user clicks outside the sliding menu or hamburger menu
+        document.addEventListener('click', function (event) {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+
+            // Close the sliding menu if clicked outside
+            if (!slidingMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                slidingMenu.classList.remove('open');
+                hamburgerMenu.classList.remove('open');
+            }
+
+            // Ensure dropdown works properly within the sliding menu
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+                    dropdown.classList.remove('open');
+                });
+            }
+        });
+
+        // Event listener to open the dropdown on click
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', toggleDropdown);
+        });
+
+    </script>
+
+
+
+
+    <!-- popup -->
+    <!-- popup -->
+    <script>
+        // Show the popup after 10 seconds on page load
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('popupOverlay').style.display = 'flex';
+            }, 10000); // Show popup after 10 seconds
+        };
+
+        // Show the popup when "Book Now" button is clicked
+        function showPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        // Close Button Functionality
+        document.getElementById('closeBtn').onclick = function () {
+            document.getElementById('popupOverlay').style.display = 'none';
+        };
+
+        // WhatsApp Background Integration (No Redirection)
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const poojaType = document.getElementById('poojaType').value.trim();
+            const date = document.getElementById('date').value.trim();
+            const details = document.getElementById('details').value.trim();
+
+            if (name && contact && poojaType && date) {
+                const message = `Name: ${name}\nContact: ${contact}\nPooja Type: ${poojaType}\nPreferred Date: ${date}\nDetails: ${details}`;
+                const whatsappURL = `https://wa.me/918310214624?text=${encodeURIComponent(message)}`;
+
+                // Send data to WhatsApp API in the background (No redirection)
+                fetch(whatsappURL, { method: "GET", mode: "no-cors" })
+                    .catch(error => console.error("WhatsApp API Error:", error));
+            }
+        }
+        document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+    document.getElementById("form-submit").disabled = true;
+
+    var formData = new FormData(this);
+    var formDataString = new URLSearchParams(formData).toString();
+
+    fetch("https://script.google.com/macros/s/AKfycbzu63ObtrXD0tVwx0BeeqihDFtOBp4VA5HleDZB4Hd-pzczxPDnaIlj38E3vLXof7GR/exec", {
+        method: "POST",
+        body: formDataString,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response:", data);
+        if (data === "Success") {
+            window.location.href = "thankyou.html"; // Redirect to Thank You page
+        } else {
+            alert("Error sending request. Please try again.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending request.");
+    });
+});
+
+       
+
+       
+    </script>
+    
+    <!-- 
+scroll animation -->
+    <script>
+        document.addEventListener("scroll", () => {
+            const section2 = document.querySelector("#section2");
+            const { top } = section2.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (top < windowHeight - 50) {
+                section2.querySelectorAll("h2, p").forEach((el) => {
+                    el.classList.add("scroll-animate");
+                });
+            }
+
+            // Show "Now" button when scrolling
+            const nowButton = document.querySelector('.now-button');
+            if (window.scrollY > 100) { // Adjust scroll threshold if needed
+                nowButton.style.display = 'flex';
+            } else {
+                nowButton.style.display = 'none';
+            }
+        });
+
+    </script>
+    /* JS to handle the scroll event */
+    <script>
+        window.addEventListener("scroll", function () {
+            let header = document.querySelector("header");
+            if (window.scrollY > 50) { // When scrolling down 50px
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+
+</html>

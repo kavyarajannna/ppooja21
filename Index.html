@@ -1,0 +1,2724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="">
+    <!-- Include FontAwesome CDN in the <head> for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.838)),
+                url('Screenshot%202025-01-30%20233743.png');
+            background-size: auto;
+            color: white;
+            /* Ensures repeating works */
+            background-repeat: repeat;
+            /* Repeats the image */
+            background-position: top left;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-size: auto;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        }
+
+
+        /* Header */
+
+        /* Header */
+        /* Make the header sticky */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            background: linear-gradient(to bottom, #000000e0, #333333e0);
+            color: #10375C;
+            position: fixed;
+            /* Make it sticky */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        /* Add a class for scrolled state */
+        header.scrolled {
+            background: #F5E6C4 !important;
+            /* Cream color */
+            color: black !important;
+        }
+
+        /* Change navigation links color when scrolled */
+        header.scrolled .nav-links ul li a {
+            color: black !important;
+        }
+
+        /* Change hamburger menu bars when scrolled */
+        header.scrolled .hamburger-menu .bar {
+            background-color: black !important;
+        }
+
+        /* Change dropdown background when scrolled */
+        header.scrolled .dropdown-content {
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Change dropdown link colors */
+        header.scrolled .dropdown-content a {
+            color: black !important;
+        }
+
+
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            /* Default height */
+            max-width: 250px;
+            /* Maximum width */
+            background-color: transparent !important;
+            overflow: hidden;
+        }
+
+        .logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ensures full visibility without distortion */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .logo {
+                height: 70px;
+                max-width: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                height: 60px;
+                max-width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                height: 50px;
+                max-width: 150px;
+            }
+        }
+
+
+
+        /* Navigation Links */
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .call-now a {
+            text-decoration: none;
+            /* Remove the blue underline */
+        }
+
+        .call-now button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            /* Initially hide the hamburger menu on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 100;
+            height: auto;
+            padding: 5px;
+        }
+
+        .hamburger-menu .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger-menu.open .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* On mobile, hide desktop menu */
+            .nav-links {
+                display: none;
+                /* Hide the normal nav links */
+            }
+
+            /* Show the hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+                /* Show hamburger menu on mobile */
+            }
+
+            .call-now {
+                display: none;
+                /* Hide the 'Call Now' button on mobile */
+            }
+
+            /* Mobile Sliding Menu */
+            /* Mobile Sliding Menu */
+            .sliding-menu {
+                display: none;
+                position: fixed;
+                top: 4rem;
+                /* Adjusted to make the hamburger cross mark visible */
+                right: -250px;
+                width: 250px;
+                height: auto;
+                max-height: 60%;
+                background-color: #19140a;
+                padding-top: 60px;
+                transition: right 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+
+            .sliding-menu.open {
+                right: 0;
+                display: block;
+            }
+
+            .sliding-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .sliding-menu ul li {
+                padding: 10px;
+                text-align: left;
+            }
+
+            .sliding-menu ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+            .sliding-menu ul li button {
+                margin-top: 10px;
+                color: white;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            /* Adjust the hamburger button */
+            .hamburger-menu .bar {
+                width: 30px;
+                height: 4px;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 769px) {
+
+            /* On desktop, show the regular navigation links */
+            .nav-links {
+                display: flex;
+            }
+
+            /* Hide the hamburger menu on desktop */
+            .hamburger-menu {
+                display: none;
+            }
+
+            .call-now {
+                display: block;
+                /* Show the 'Call Now' button on desktop */
+            }
+
+            /* Ensure the sliding menu is hidden on desktop */
+            .sliding-menu {
+                display: none;
+            }
+        }
+
+        /* Existing styles remain unchanged */
+        /* Existing styles remain unchanged */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+            border-radius: 1rem;
+            /* Ensure the dropdown stays above other elements */
+        }
+
+        .dropdown-content {
+            border-radius: 1rem;
+            display: none;
+            position: absolute;
+            background: rgb(0 0 0 / 66%);
+            /* Semi-transparent background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glassmorphism */
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* Higher z-index to bring dropdown above the Hero section */
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Subtle border */
+        }
+
+        /* Adjust dropdown links for better visibility */
+        .dropdown-content a {
+            color: #fff;
+            /* White text for contrast */
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Hover effect */
+        .dropdown-content a:hover {
+            background-color: #BD7E30;
+            /* Soft hover effect */
+        }
+
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .sliding-menu .dropdown-content {
+            position: static;
+            display: none;
+            background-color: #333;
+        }
+
+        .sliding-menu .dropdown-content a {
+            color: white;
+        }
+
+        .sliding-menu .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+
+        footer .column .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 95px;
+            /* Fixed width */
+            height: 90px;
+            /* Make width and height equal */
+            background-color: #F5E6C4;
+            /* Cream background */
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            footer .column .logo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer .column .logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            /* background: #cd0c0c; */
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            border-radius: 10px;
+        }
+
+
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            /* transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px; */
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Pulsing effect (only applied to larger screens) */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+
+            50% {
+                transform: scale(1.1);
+                background-color: #b30505;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: #cd0c0c;
+            }
+        }
+
+        /* Apply pulse effect to larger screens */
+        @media (min-width: 769px) {
+            .button-86 {
+                animation: pulse 2s infinite;
+                /* Pulsing animation on larger screens */
+            }
+        }
+
+
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            /* Change from absolute to relative */
+            width: 100%;
+            /* Make it full-width */
+            background-color: #BD7E30;
+            color: white;
+            padding: 30px 15%;
+            box-sizing: border-box;
+            /* Ensures padding does not add extra width */
+        }
+
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer .column {
+            flex: 1;
+            min-width: 250px;
+            padding: 10px;
+        }
+
+        /* Social Icons */
+        footer .column .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        footer .column .social-icons a {
+            color: white;
+            font-size: 40px;
+            /* Increased icon size */
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .column .social-icons a:hover {
+            color: #F3C623;
+        }
+
+        footer a {
+            color: white;
+            /* Make links white */
+            text-decoration: none;
+            /* Optional: removes underline from links */
+        }
+
+        footer a:hover {
+            color: #F3C623;
+            /* Optional: hover effect to change color when mouse is over the link */
+        }
+
+        /* Relative Links Section */
+        footer .column ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            /* Gap between the heading and the list */
+        }
+
+        footer .column ul li {
+            margin: 15px 0;
+            position: relative;
+            font-size: 18px;
+            padding-left: 20px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        footer .column ul li:hover {
+            color: #F3C623;
+        }
+
+        footer .column ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20%;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(240 231 216);
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0);
+            animation: bulletAnimation 0.5s forwards;
+        }
+
+        /* Animation for bullet points */
+        @keyframes bulletAnimation {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Horizontal Line Animation */
+        footer .line {
+
+            width: 100%;
+            height: 2px;
+            background-color: #636b46;
+            /* opacity: 0; */
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        @keyframes lineAnimation {
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        /* Address Section */
+        footer .column .address p {
+            margin: 10px 0;
+        }
+
+        footer .column .address .address-icon,
+        footer .column .address .phone-icon {
+            color: #F3C623;
+            margin-right: 10px;
+        }
+
+        footer .column .address a {
+            color: #F3C623;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .column .address p+p {
+            margin-top: 10px;
+            /* Add gap between the phone number and the address */
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #636b46;
+        }
+
+        .footer-bottom .line {
+            width: 80%;
+            height: 2px;
+            margin: 0 auto 10px auto;
+            background-color: #F3C623;
+            opacity: 0;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        .footer-bottom p {
+            color: white;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Ensure the footer bottom spans the full width */
+        .footer-bottom {
+            flex-basis: 100%;
+        }
+
+        /* Responsive Design */
+
+        /* For devices with max-width of 1200px (e.g., tablets, small laptops) */
+        @media (max-width: 1200px) {
+            footer {
+                padding: 30px 10%;
+            }
+
+            .footer-columns {
+                justify-content: space-evenly;
+            }
+
+            footer .column {
+                flex: 1 1 45%;
+            }
+        }
+
+        /* For devices with max-width of 768px (e.g., tablets in portrait mode) */
+        @media (max-width: 768px) {
+            footer {
+                padding: 25px 5%;
+            }
+
+            .footer-columns {
+                justify-content: center;
+            }
+
+            footer .column {
+                flex: 1 1 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            footer .column .social-icons {
+                justify-content: center;
+            }
+
+            footer .column .social-icons a {
+                margin: 0 10px;
+                font-size: 30px;
+                /* Slightly smaller icons */
+            }
+
+            footer .column ul {
+                list-style-type: none;
+                /* Remove the bullet points */
+                padding-left: 0;
+                /* Remove padding */
+                margin: 0;
+                /* Remove any default margin */
+            }
+
+            footer .column ul li {
+                font-size: 16px;
+                /* Adjust font size for smaller screens */
+                margin: 10px 0;
+                /* Adjust margin between list items */
+                text-align: left;
+            }
+
+            footer .column .address p {
+                font-size: 14px;
+            }
+        }
+
+        footer .column .logo1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+            /* Ensures no overflow */
+            border-radius: 50%;
+            /* Makes it round */
+        }
+
+        footer .column .logo1 img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Ensures full image fits without stretching */
+        }
+
+
+        /* For devices with max-width of 480px (e.g., smartphones) */
+        @media (max-width: 480px) {
+            footer {
+                padding: 20px 5%;
+            }
+
+            footer .column .logo img {
+                height: 40px;
+            }
+
+            footer .column .social-icons a {
+                font-size: 24px;
+                /* Smaller icons */
+            }
+
+            footer .column ul li {
+                font-size: 14px;
+            }
+
+            footer .column .address p {
+                font-size: 12px;
+            }
+
+            footer .footer-bottom p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Adjust the max-width as needed */
+            footer {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            /* Apply bounce animation */
+        }
+
+        .whatsapp-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .whatsapp-icon img:hover {
+            transform: scale(1.1);
+            /* Slight zoom effect on hover */
+            transition: transform 0.3s;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                /* Start and end at the original position */
+            }
+
+            50% {
+                transform: translateY(-10px);
+                /* Move up */
+            }
+        }
+
+        /* Hide WhatsApp icon on mobile screens */
+        @media (max-width: 768px) {
+            .whatsapp-icon {
+                display: none;
+            }
+        }
+
+        /* Fixed Bottom Buttons Section */
+        /* Fixed Bottom Buttons Section */
+        .fixed-bottom-buttons {
+            display: none;
+            /* Hidden by default */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Show only on screens smaller than 768px */
+            .fixed-bottom-buttons {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgb(240 231 216);
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px 0;
+                z-index: 1000;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .button-call-now,
+            .button-whatsapp {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .5rem;
+                color: #FFFFFF;
+                font-size: 24px;
+                /* Adjust the size of the icons */
+                padding: 1rem 1.75rem;
+                text-decoration: none;
+                border: 0;
+                cursor: pointer;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                width: 45%;
+                /* Adjust width to fit within the section */
+            }
+
+            .button-call-now:hover,
+            .button-whatsapp:hover {
+                background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+            }
+
+            .button-call-now {
+                background-color: #cda34f;
+                /* Custom color for call button */
+            }
+
+            .button-whatsapp {
+                background-color: #cda34f;
+                /* WhatsApp color */
+            }
+
+            .button-call-now:hover {
+                background-color: #636b46;
+            }
+
+            .button-whatsapp:hover {
+                background-color: #636b46;
+            }
+
+            /* Font Awesome Icons */
+            .fas,
+            .fab {
+                font-size: 24px;
+                /* Adjust icon size */
+            }
+        }
+
+
+
+
+        /* Popup Background */
+        #popupOverlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Popup Content */
+        #popupForm h2 {
+            text-align: center;
+            /* Horizontally centers the text */
+            margin: 0 0 20px 0;
+            /* Adds space below the heading */
+            color: #990000;
+        }
+
+        #popupForm {
+            background-image: linear-gradient(#e1c99cdc, rgba(240, 231, 216, 0.886)),
+                url('Screenshot%202025-01-30%20233743.png');
+            /* background: linear-gradient(135deg, #e1c99c, rgb(240 231 216)); */
+            /* Orange-yellow light gradient */
+            padding: 20px;
+            box-sizing: border-box;
+            /* Reduced padding */
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: left;
+            overflow: hidden;
+            /* Ensures close button stays inside */
+            max-height: 93vh;
+            /* Maximum height 80% of the viewport height */
+            height: auto;
+            overflow-y: auto;
+            /* Enable scrolling when content overflows */
+            /* Ensures the height adjusts based on content */
+        }
+
+        /* Label Styling */
+        label {
+            color: #636b46;
+            display: block;
+            /* Ensures label is a block element */
+        }
+
+        /* Close Button */
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            /* Close button inside the box */
+            right: 10px;
+            /* Adjusted to place inside the box */
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            /* Increased size */
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Form Fields */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 5px;
+            /* Reduced margin below fields */
+            border-radius: 5px;
+            border: 1px solid #636b46;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Textarea */
+        textarea {
+            height: 80px;
+            /* Reduced height for textarea */
+        }
+
+        /* Button Styles */
+        .button-8766 {
+            all: unset;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-8766::after,
+        .button-8766::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .4s;
+        }
+
+        .button-8766::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #BD7E30;
+            border-radius: 10px;
+        }
+
+        .button-8766::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-8766:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-8766:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-8766:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+                /* Reduced padding */
+            }
+
+            #closeBtn {
+                font-size: 35px;
+                /* Slightly bigger close button on smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .button-8766 {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            #popupForm {
+                width: 90%;
+                padding: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                #popupForm {
+                    max-height: 70vh;
+                    /* Limit the height on large screens */
+                }
+            }
+
+            #closeBtn {
+                font-size: 40px;
+                /* Close button even bigger for small screens */
+            }
+        }
+
+
+
+        /* Gallery Section */
+        .gallery565 {
+            padding: 50px 5%;
+            text-align: center;
+            max-width: 100%;
+            overflow-x: hidden;
+            /* Prevents horizontal scrolling */
+        }
+
+        /* Heading */
+        .gallery565 h1 {
+            text-align: center;
+            font-size: 2.2857142858rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 4rem;
+            color: #373f27;
+            font-family: Open Sans, sans-serif;
+        }
+
+        /* Horizontal Line Animation */
+        .underline {
+            width: 60px;
+            height: 3px;
+            background-color: #000;
+            margin: 20px auto;
+            transform: scaleX(0);
+            animation: lineAnimation 1s forwards;
+        }
+
+        @keyframes lineAnimation {
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 images per row */
+            gap: 20px;
+            justify-items: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        /* Gallery Item */
+        .gallery-item {
+            width: 100%;
+            max-width: 280px;
+            /* Ensures items don’t stretch */
+            height: 200px;
+            /* Adjusted for consistency */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Image Styling */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Effects */
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Grid Adjustments */
+        @media (max-width: 1200px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 images per row */
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 images per row */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+                /* 1 image per row */
+            }
+        }
+
+        /* Section Styles */
+
+        .responsive-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 40px 5%;
+            gap: 15px;
+            /* Reduced gap between columns */
+        }
+
+        .responsive-section .column {
+            flex: 1 1 calc(33.333% - 15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            background-color: rgb(240 231 216);
+            padding: 20px 20px 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            /* Ensures everything inside is centered */
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 400px;
+        }
+
+        .box h3 {
+            color: #373f27;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+
+
+        /* Ensure image fits the box */
+        .box img {
+            width: 100%;
+            /* Make image fill the width of the box */
+            height: 200px;
+            /* Fixed height */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .box hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 15px 0;
+        }
+
+        /* .box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            min-height: 50px;
+        } */
+
+        .box p {
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .button-91 {
+            color: #fff;
+            padding: 15px 25px;
+            /* Increased padding for height */
+            font-size: 14px;
+            /* Font size */
+            background-color: #BD7E30;
+            background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            font-weight: bold;
+            border: 0;
+            user-select: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            max-width: 180px;
+            /* Maximum width of the button */
+            width: 100%;
+            /* Make button width responsive */
+            text-align: center;
+            /* Center the text horizontally */
+
+            /* Flexbox to center content vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-91:hover {
+            background-color: #75973a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .responsive-section {
+                padding: 40px 5%;
+            }
+
+            .column {
+                flex: 1 1 100%;
+            }
+
+            .box {
+                max-width: 100%;
+                min-height: 350px;
+                padding: 20px 20px 40px 20px;
+            }
+
+            /* Adjust fixed image dimensions for small screens */
+            .box img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .responsive-section .column {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Add gap between rows */
+        .responsive-section+.responsive-section {
+            margin-top: 40px;
+        }
+
+        /* Styles for Types of Pooja Heading */
+        .types-pooja-heading {
+
+            text-align: center;
+            /* margin-bottom: 40px; */
+            /* Space between heading and responsive section */
+        }
+
+        .types-pooja-heading p {
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 1px;
+            flex-grow: 1;
+        }
+
+        .types-pooja-heading h2 {
+            color: #373f27;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+
+        /* Contact Section */
+        .contact-section {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.856), rgba(255, 255, 255, 0.5)), url(/Screenshot\ 2025-01-30\ 233743.png);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px 20px;
+            padding: 5%;
+            /* Reduced padding for desktop */
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section .contact-column {
+            padding: 20px;
+        }
+
+        .contact-section .contact-column h4 {
+            color: #373f27;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: Open Sans, sans-serif;
+        }
+
+        .contact-section .contact-column p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.75rem;
+            color: #1d2833;
+            font-family: Open Sans, sans-serif;
+        }
+
+        /* Icons with Shimmer Effect */
+        .contact-section .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+            color: transparent;
+            background: linear-gradient(90deg, #F3C623, #EB8317, #F4F6FF);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            animation: shimmer 5s linear infinite;
+        }
+
+        /* Shimmer Animation */
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Links */
+        .contact-section a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .contact-section a:hover {
+            color: #000;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .contact-section {
+                padding: 4%;
+                /* Adjusted padding for medium screen */
+            }
+
+            .contact-section .contact-column h4 {
+                font-size: 1.8rem;
+            }
+
+            .contact-section .contact-column p {
+                font-size: 1.1rem;
+            }
+
+            .contact-section .icon {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 5%;
+                /* Keep padding smaller for mobile */
+            }
+
+            .contact-section .contact-column h4 {
+                font-size: 1.5rem;
+            }
+
+            .contact-section .contact-column p {
+                font-size: 1rem;
+            }
+
+            .contact-section .icon {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 4%;
+                /* Even smaller padding for small screens */
+            }
+
+            .contact-section .contact-column h4 {
+                font-size: 1.3rem;
+            }
+
+            .contact-section .contact-column p {
+                font-size: 0.95rem;
+            }
+
+            .contact-section .icon {
+                font-size: 40px;
+            }
+        }
+
+        /* Section 2: Scroll Animation and Styling */
+        #section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Centers content */
+            justify-content: center;
+            max-width: 900px;
+            /* Slightly wider for better spacing */
+            margin: 0 auto;
+            /* Reduced margin */
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 50px 5%;
+            /* Adjusted left & right padding */
+        }
+
+        /* Heading Styling */
+        #section2 h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #373f27;
+            font-family: "Open Sans", sans-serif;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Paragraph Styling */
+        #section2 p {
+            text-align: left;
+            /* Ensures text is left-aligned */
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            color: #373f27;
+            font-family: "Open Sans", sans-serif;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Scroll Animation */
+        #section2 h2.scroll-animate,
+        #section2 p.scroll-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            #section2 {
+                padding: 40px 5%;
+            }
+
+            #section2 h2 {
+                font-size: 1.8rem;
+            }
+
+            #section2 p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #section2 {
+                padding: 40px 5%;
+            }
+
+            #section2 h2 {
+                font-size: 1.6rem;
+            }
+
+            #section2 p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #section2 {
+                padding: 30px 5%;
+            }
+
+            #section2 h2 {
+                font-size: 1.4rem;
+            }
+
+            #section2 p {
+                font-size: 0.95rem;
+            }
+        }
+
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            min-height: 70vh;
+            /* Ensures a minimum height but allows content to expand */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url('temple.jpg') no-repeat center center/cover;
+            padding-top: 100px;
+            /* Keeps space for the fixed header */
+        }
+
+        /* Overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgb(0 0 0 / 69%);
+            z-index: 0;
+        }
+
+        .hero-container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            /* Ensures text and images are above the black mask */
+        }
+
+
+        .left-column,
+        .right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        .left-column {
+            text-align: center;
+            gap: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .animated-heading {
+            color: white;
+            font-size: 24px;
+            /* font-weight: bold; */
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        .right-column {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider-container img {
+            width: 100%;
+            /* Ensures it takes the full width of the container */
+            max-width: 500px;
+            /* Adjust as per your design */
+            height: 300px;
+            /* Set a fixed height */
+            object-fit: cover;
+            /* Ensures images maintain aspect ratio without distortion */
+            border-radius: 10px;
+        }
+
+
+        /* Responsive Fix */
+        @media (max-width: 1024px) {
+            .hero {
+                padding-top: 90px;
+                /* Slightly increase space for medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 80px;
+                /* Adjust for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 70px;
+                /* Adjust for mobile */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                /* Allow the section to expand */
+                min-height: 100vh;
+
+                /* Ensure enough space */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                align-items: center;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .right-column {
+                height: auto;
+                /* Let content define height */
+                min-height: 40vh;
+                /* Ensure it stays inside */
+                overflow: hidden;
+            }
+
+            .slider-container img {
+                max-width: 80%;
+                /* Prevents overflow */
+                max-height: 200px;
+            }
+        }
+
+        .chapter567 {
+            text-align: center;
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 1px;
+
+        }
+
+        .chapter567-header h2 {
+            color: #373f27;
+            font-size: 2.2875rem;
+            font-weight: 600;
+            line-height: 2rem;
+            margin-bottom: 1rem;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+
+        .chapter567-header p {
+
+            font-size: 1.2857142858rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #373f27;
+            font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            margin-bottom: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .chapter567-header h2 {
+                font-size: 2.28rem;
+                /* Smaller heading on mobile */
+            }
+
+            .chapter567-header p {
+                font-size: 1.28rem;
+                /* Smaller subheading on mobile */
+            }
+        }
+
+        .custom-hr {
+            width: 100%;
+            height: 20px;
+            margin-top: 2rem;
+            /* Adjust height as needed */
+            background: url('separator-1.png') repeat-x;
+            border: none;
+        }
+
+
+        /* Section 143: Responsive Styling */
+        #section143 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            /* Ensures content does not stretch too wide */
+            margin: 0 auto;
+            /* Centers the section */
+            padding: 50px 5%;
+            /* Keeps left & right padding fixed at 5% */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Heading Styling */
+        #section143 h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #373f27;
+            font-family: "Open Sans", sans-serif;
+            text-align: center;
+        }
+
+        /* Paragraph Styling */
+        #section143 p {
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+            color: #373f27;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            #section143 {
+                padding: 40px 5%;
+            }
+
+            #section143 h2 {
+                font-size: 1.8rem;
+            }
+
+            #section143 p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #section143 {
+                padding: 40px 5%;
+            }
+
+            #section143 h2 {
+                font-size: 1.6rem;
+            }
+
+            #section143 p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #section143 {
+                padding: 30px 5%;
+            }
+
+            #section143 h2 {
+                font-size: 1.4rem;
+            }
+
+            #section143 p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .testimonial-container {
+            width: 60%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 200px;
+            /* Ensuring consistent height */
+            padding: 8%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            flex-wrap: wrap;
+            /* Allows wrapping for smaller screens */
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+            /* Prevents image from shrinking */
+        }
+
+        .testimonial-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .testimonial-text {
+            color: #BD7E30;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-name {
+            color: #BD7E30;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #BD7E30;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 70px;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonial-container {
+                width: 80%;
+            }
+
+            .testimonial {
+                padding: 10%;
+                min-height: 220px;
+                /* Adjusting height for larger tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-container {
+                width: 90%;
+            }
+
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+                padding: 10%;
+                min-height: auto;
+                /* Allowing height to adjust naturally */
+            }
+
+            .testimonial img {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .testimonial-name {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial {
+                padding: 12%;
+                min-height: auto;
+            }
+
+            .arrow {
+                font-size: 50px;
+                /* Smaller arrows for mobile */
+            }
+        }
+
+
+        #section-7865 {
+            padding: 2% 6.5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            /* background: #f4f4f4; */
+        }
+
+        #section-7865 .column {
+            flex: 1;
+            min-width: 200px;
+            background: #BD7E30;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* Space between icon and text */
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #section-7865 .column:hover {
+            transform: scale(1.05);
+        }
+
+        #section-7865 .icon {
+            font-size: 20px;
+            color: #555;
+        }
+
+        #section-7865 .text {
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            #section-7865 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #section-7865 .column {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #thankYouPopup {
+                width: 95%;
+                max-width: 320px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        /* Fullscreen loader */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        /* Responsive video */
+        video {
+            width: 50vw;
+            /* Default: 50% of viewport width */
+            height: auto;
+            max-width: 400px;
+            /* Max limit */
+        }
+
+        /* Make video bigger on smaller screens */
+        @media (max-width: 768px) {
+            video {
+                width: 80vw;
+                /* 80% of viewport width */
+                max-width: 500px;
+                /* Max limit for small screens */
+            }
+        }
+
+        /* Hide content initially */
+        #main-content {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <video src="logo.mp4" autoplay muted playsinline></video>
+    </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img id="logoImage" src="MNB Logo PNG white.png" alt="Logo">
+            </a>
+        </div>
+
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Pooja</a>
+                    <div class="dropdown-content">
+                        <a href="Pooja2.html">Narayanbali Pooja
+                        </a>
+                        <a href="Pooja.html">Nagabali Pooja</a>
+                        <!-- <a href="#">Nagabali Pooja</a> -->
+                        <a href="Pooja1.html">PitruDosha Nivarana
+                        </a>
+                        <a href="Pooja3.html">Thripindi Shraddha
+                        </a>
+                    </div>
+                </li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="call-now">
+            <a href="tel:+917019089159">
+                <button class="button-86" role="button">Call Now</button>
+            </a>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="sliding-menu" id="slidingMenu">
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Pooja</a>
+                <div class="dropdown-content">
+                    <a href="Pooja2.html">Narayanbali Pooja
+                    </a>
+                    <a href="Pooja.html">Nagabali Pooja</a>
+                    <!-- <a href="#">Nagabali Pooja</a> -->
+                    <a href="Pooja1.html">PitruDosha Nivarana
+                    </a>
+                    <a href="Pooja3.html">Thripindi Shraddha
+                    </a>
+                </div>
+            </li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="tel:+917019089159"><button class="button-86">Call Now</button></a></li>
+        </ul>
+    </div>
+    <div id="popupOverlay">
+        <div id="popupForm">
+            <button id="closeBtn">&times;</button>
+            <h2>Pooja Booking Form</h2>
+            <form id="form" method="post">
+                <label>Name:</label><br>
+                <input type="text" name="name" id="name" required><br>
+                <label>Contact Number:</label><br>
+                <input type="text" name="contact" id="contact" required><br>
+                <label>Type of Pooja:</label><br>
+                <select name="pooja" id="poojaType">
+                    <option value="Narayanbali">Narayanbali</option>
+                    <option value="Nagabali">Nagabali</option>
+                    <option value="PitruDosha Nivarana">PitruDosha Nivarana</option>
+                    <option value="PitruDosha Nivarana">Thripindi Shraddha</option>
+                </select><br>
+                <label>Preferred Date:</label><br>
+                <input type="date" name="date" id="date" required><br>
+                <label>Additional Details (Optional):</label><br>
+                <textarea name="details" id="details"></textarea><br>
+                <button type="submit" class="button-8766" id="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thank You Popup -->
+    <div id="thankYouPopup"
+        style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f8f1e5; padding: 25px; box-shadow: 0px 4px 15px rgba(0,0,0,0.3); text-align: center; z-index: 1000; width: 90%; max-width: 400px; border-radius: 12px; font-family: 'Poppins', sans-serif; color: #5a3e1b; border: 2px solid #d4a373;">
+
+        <!-- Close Button in the Top-Right Corner with Animation -->
+        <button onclick="closeThankYouPopup()"
+            style="position: absolute; top: 10px; right: 10px; background: #d4a373; border: none; font-size: 18px; cursor: pointer; color: white; width: 28px; height: 28px; border-radius: 50%; transition: transform 0.3s ease-in-out;"
+            onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+            &times;
+        </button>
+
+        <!-- Pooja Icon -->
+        <img src="oil-lamp.png" alt="Pooja Icon" style="width: 80px; margin: 15px auto;">
+
+        <h2 style="margin-top: 10px; font-size: 22px;">Thank You!</h2>
+
+        <p style="font-size: 16px; margin-top: 15px; line-height: 1.6;">Your information has been successfully received.
+        </p>
+        <p style="font-size: 16px; margin-top: 10px; line-height: 1.6;">We will contact you soon!</p>
+    </div>
+
+
+    <section class="hero">
+
+        <div class="hero-container">
+            <div class="left-column">
+                <div class="image-container">
+                    <img src="pngwing.com (1).png" alt="Fixed Image">
+                </div>
+                <div class="animated-heading">Honor Your Ancestors and Attain Peace Through Sacred Poojas.</div>
+                <button class="button-86" onclick="showPopup()">Book Now</button>
+            </div>
+            <div class="right-column">
+                <div class="slider-container">
+                    <img id="sliderImage" src="IMG20250126122245.jpg" alt="Slide">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- First Row -->
+    <section class="types-pooja-heading">
+        <br>
+        <br>
+        <h2>Types of Pooja</h2>
+        <br>
+        <p>"To bring peace, remove ancestral doshas restore harmony in life."<br><br>
+            "Deep spiritual importance, helping to seek divine blessings, honor amcestors and overcome karmic
+            obstacles."</p>
+        <br>
+        <br>
+    </section>
+
+    <section class="responsive-section">
+
+        <div class="column">
+
+            <div class="box">
+
+                <img src="1736422675161.jpg" alt="Image 1" class="img">
+                <hr>
+                <h3>Nagabali Pooja</h3>
+                <p>Release the souls of departed ancestors to attain peace...</p>
+                <button class="button-91" onclick="showPopup()">Book Now</button>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box">
+
+                <img src="1736422675442.jpg" alt="Image 2" class="img">
+                <hr>
+                <h3>PitruDosha Nivarana</h3>
+                <p>Remove curses and obstacles related to serpent-related...</p>
+                <button class="button-91" onclick="showPopup()">Book Now</button>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box">
+
+                <img src="1736422675201.jpg" alt="Image 3" class="img">
+                <hr>
+                <h3>Narayanabali Pooja</h3>
+                <p>Alleviate ancestral doshas for familial prosperity and ...</p>
+                <button class="button-91" onclick="showPopup()">Book Now</button>
+            </div>
+        </div>
+
+        <div class="column">
+
+            <div class="box">
+
+                <img src="IMG_20240826_133646.jpg" alt="Image 1" class="img">
+                <hr>
+                <h3>Thripindi Shraddha</h3>
+                <p>Gokarna, often called the ‘Kashi of the South’...</p>
+                <button class="button-91" onclick="showPopup()">Book Now</button>
+            </div>
+        </div>
+    </section>
+    <section id="section-7865">
+        <div class="column">
+            <i class="fas fa-heart"></i>
+            <span class="text">Online Pooja Booking</span>
+        </div>
+        <div class="column">
+            <i class="fas fa-balance-scale"></i>
+            <span class="text">Accommodation for Devotees</span>
+        </div>
+        <div class="column">
+            <i class="fa fa-praying-hands"></i>
+            <span class="text">Online Pooja Participation</span>
+        </div>
+        <div class="column">
+            <i class="fas fa-gem"></i>
+            <span class="text">Esteemed priests</span>
+        </div>
+    </section>
+    <hr class="custom-hr">
+    <section class="gallery565">
+        <h1>Gallery</h1>
+        <!-- <div class="underline"></div> Horizontal line -->
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="IMG_20240826_125141.jpg" alt="Image 1"></div>
+            <div class="gallery-item"><img src="IMG_20240826_133646.jpg" alt="Image 2"></div>
+            <div class="gallery-item"><img src="IMG_20240826_133654.jpg" alt="Image 3"></div>
+            <div class="gallery-item"><img src="1736422675191.jpg" alt="Image 4"></div>
+            <div class="gallery-item"><img src="1736422675151.jpg" alt="Image 1"></div>
+            <div class="gallery-item"><img src="1736422675248 (1).jpg" alt="Image 2"></div>
+            <div class="gallery-item"><img src="IMG20250126122245.jpg" , alt="Image 3"></div>
+            <div class="gallery-item"><img src="IMG_20240925_074210.jpg" alt="Image 4"></div>
+        </div>
+    </section>
+    <hr class="custom-hr">
+    <section class="chapter567">
+        <div class="chapter567-header">
+            <h2>Testimonial</h2><br>
+            <p>"A sacred journey to seek divine blessings, honor your ancestors, and break free from karmic barriers."
+            </p><br><br>
+        </div>
+    </section>
+    <div class="testimonial-container">
+        <button class="arrow arrow-left" onclick="prevTestimonial()">&#10094;</button>
+        <div class="testimonial" id="testimonial">
+            <img id="testimonial-img" src="https://via.placeholder.com/100" alt="Person">
+            <div class="testimonial-content">
+                <p class="testimonial-text" id="testimonial-text">This is an amazing service! Highly recommend it.</p>
+                <p class="testimonial-name" id="testimonial-name">- John Doe</p>
+            </div>
+        </div>
+        <button class="arrow arrow-right" onclick="nextTestimonial()">&#10095;</button>
+    </div>
+
+    <hr class="custom-hr">
+
+    <section class="chapter567">
+        <div class="chapter567-header">
+            <h2>Why Gokarna?</h2><br><br>
+            <p style="text-align: justify;"> Gokarna, often referred to as the 'Kashi of the South,' holds immense
+                spiritual significance for
+                ancestral
+                rituals such as Narayanbali, Nagabali, and PitruDosha Nivarana. Home to the sacred Mahabaleshwar Temple
+                and
+                the divine Atma-Linga of Lord Shiva, this holy town is revered as a powerful center for resolving
+                ancestral
+                karmas and liberating departed souls. Ancient scriptures like the Skanda Purana emphasize the
+                transformative
+                spiritual benefits of performing these Poojas in Gokarna, where the divine energy amplifies the efficacy
+                of
+                rituals. By conducting these sacred ceremonies here, devotees not only honor their forefathers but also
+                seek
+                blessings for peace, prosperity, and harmony in their lives, making Gokarna a uniquely blessed
+                destination
+                for ancestral worship.</p><br><br><br><br>
+        </div>
+    </section>
+
+    <hr class="custom-hr">
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-columns">
+            <!-- First Column -->
+            <div class="column">
+                <div class="logo1">
+                    <img src="MNB Logo PNG black.png
+                    " alt="Logo">
+                </div>
+                <div class="social-icons">
+                    <!-- <a href="https://facebook.com" class="fa-brands fa-facebook"></a>
+                    <a href="https://twitter.com" class="fa-brands fa-twitter"></a> -->
+                    <a href="https://instagram.com" class="fa-brands fa-instagram"></a>
+                </div>
+            </div>
+
+            <!-- Second Column -->
+            <div class="column">
+                <p>Relative Links</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <ul>
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="Pooja.html">Poojas</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+                <!-- <div class="line"></div> Horizontal line below the links -->
+            </div>
+
+            <!-- Third Column -->
+            <div class="column">
+                <p>Address</p>
+                <div class="line"></div> <!-- Horizontal line -->
+                <div class="address">
+                    <p><span class="address-icon">🏠</span>Shadakshari nilaya
+                        Bele hittal road. Gokarna, Karnataka 581326</p>
+                    <p><span class="phone-icon">📞</span><a href="tel:+917019089159"
+                            style="color: yellow;">7019089159</a></p>
+                </div>
+                <!-- <div class="line"></div> Horizontal line below address -->
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <!-- <div class="line"></div> Horizontal line above the copyright -->
+            <p>&copy; 2025 MokshaNarayanabali. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/7019089159" target="_blank" class="whatsapp-icon" title="Chat with us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+    </a>
+
+    <!-- Fixed Bottom Buttons -->
+    <section class="fixed-bottom-buttons">
+        <button class="button-call-now" onclick="location.href='tel:+917019089159'">
+            <i class="fas fa-phone-alt"></i> <!-- Font Awesome phone icon -->
+        </button>
+        <button class="button-whatsapp" onclick="location.href='https://wa.me/7019089159'">
+            <i class="fab fa-whatsapp"></i> <!-- Font Awesome WhatsApp icon -->
+        </button>
+    </section>
+
+    <!-- testimonial  -->
+    <script>
+        const testimonials = [
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "A truly divine experience! The pooja was performed with great devotion, and I felt immense peace afterward. 🙏✨ ", name: "- Rajesh Iyer, Chennai" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "After the Narayana Bali pooja, we noticed a positive shift in our family’s well-being. Grateful for the guidance! 🌿🕉️ ", name: "- Ananya Sharma, Bangalore" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The rituals were conducted with such authenticity and precision. We felt deeply connected to our ancestors.🔥🪔 ", name: "- Sandeep Kulkarni, Pune" },
+
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "Excellent arrangements and a spiritually uplifting experience. Highly recommend these services in Gokarna! 🌊🏞️ ", name: "- Deepika Rao, Hyderabad" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "I had been facing obstacles for years, but after the Pitrudosha pooja, everything started falling into place. 🌿🙏 ", name: "- Venkatesh Bhat, Mangalore" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The priests performed the Nagabali pooja with great sincerity. We felt truly blessed after the ceremony! 🐍🔥 ", name: "- Priya Nair, Kochi" },
+
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "A well-organized and deeply spiritual experience. Thank you for helping us complete this important ritual. 🙌🕉️ ", name: "- Ravi Verma, Delhi" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "The energy and atmosphere during the pooja were divine. We left with a sense of relief and fulfillment. 💫🪔 ", name: "- Meera Joshi, Mumbai" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "Traveling to Gokarna for the pooja was the best decision. The experience brought peace and harmony to our lives. 🌊🕊️ ", name: "- Arun Deshmukh, Nagpur" },
+            { img: "WhatsApp Image 2025-02-07 at 9.29.22 PM.jpeg", text: "I highly recommend these pooja services for anyone seeking ancestral blessings and relief from doshas. 🕉️✨ ", name: "- Kavitha Reddy, Mysore" },
+
+        ];
+
+        let currentIndex = 0;
+        function updateTestimonial() {
+            document.getElementById("testimonial-img").src = testimonials[currentIndex].img;
+            document.getElementById("testimonial-text").innerText = testimonials[currentIndex].text;
+            document.getElementById("testimonial-name").innerText = testimonials[currentIndex].name;
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonial();
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        }
+
+        setInterval(nextTestimonial, 3000);
+    </script>
+
+
+    <!-- FontAwesome for Social Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            slidingMenu.classList.toggle('open');
+            hamburgerMenu.classList.toggle('open');
+        }
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            const logoImage = document.getElementById("logoImage");
+
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+                logoImage.src = "MNB Logo PNG black.png"; // Change to your scrolled logo
+            } else {
+                header.classList.remove("scrolled");
+                logoImage.src = "MNB Logo PNG white.png"; // Original logo
+            }
+        });
+
+        // Function to toggle dropdown within the sliding menu
+        function toggleDropdown(event) {
+            const dropdown = event.target.closest('.dropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        }
+
+        // Close the menu if the user clicks outside the sliding menu or hamburger menu
+        document.addEventListener('click', function (event) {
+            const slidingMenu = document.getElementById('slidingMenu');
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+
+            // Close the sliding menu if clicked outside
+            if (!slidingMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+                slidingMenu.classList.remove('open');
+                hamburgerMenu.classList.remove('open');
+            }
+
+            // Ensure dropdown works properly within the sliding menu
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+                    dropdown.classList.remove('open');
+                });
+            }
+        });
+
+        // Event listener to open the dropdown on click
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', toggleDropdown);
+        });
+
+    </script>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.getElementById("preloader").style.display = "none";
+                document.body.classList.add("loaded"); // Fade in the website
+                document.body.style.overflow = "auto";
+            }, 3000);
+        });
+
+    </script>
+    <!-- popup -->
+    <!-- popup -->
+    <script>
+        // Show the popup after 10 seconds on page load
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('popupOverlay').style.display = 'flex';
+            }, 10000); // Show popup after 10 seconds
+        };
+
+        // Show the popup when "Book Now" button is clicked
+        function showPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        // Close Button Functionality
+        document.getElementById('closeBtn').onclick = function () {
+            document.getElementById('popupOverlay').style.display = 'none';
+        };
+
+        // WhatsApp Background Integration (No Redirection)
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const poojaType = document.getElementById('poojaType').value.trim();
+            const date = document.getElementById('date').value.trim();
+            const details = document.getElementById('details').value.trim();
+
+            if (name && contact && poojaType && date) {
+                const message = `Name: ${name}\nContact: ${contact}\nPooja Type: ${poojaType}\nPreferred Date: ${date}\nDetails: ${details}`;
+                const whatsappURL = `https://wa.me/918310214624?text=${encodeURIComponent(message)}`;
+
+                // Send data to WhatsApp API in the background (No redirection)
+                fetch(whatsappURL, { method: "GET", mode: "no-cors" })
+                    .catch(error => console.error("WhatsApp API Error:", error));
+            }
+        }
+        document.getElementById("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+    document.getElementById("form-submit").disabled = true;
+
+    var formData = new FormData(this);
+    var formDataString = new URLSearchParams(formData).toString();
+
+    fetch("https://script.google.com/macros/s/AKfycbzu63ObtrXD0tVwx0BeeqihDFtOBp4VA5HleDZB4Hd-pzczxPDnaIlj38E3vLXof7GR/exec", {
+        method: "POST",
+        body: formDataString,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response:", data);
+        if (data === "Success") {
+            window.location.href = "thankyou.html"; // Redirect to Thank You page
+        } else {
+            alert("Error sending request. Please try again.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending request.");
+    });
+});
+
+       
+
+       
+    </script>
+    
+    <!-- thank you -->
+    <script>
+        function showThankYouPopup() {
+            document.getElementById("thankYouPopup").style.display = "block";
+        }
+
+        function closeThankYouPopup() {
+            document.getElementById("thankYouPopup").style.display = "none";
+        }
+    </script>
+
+    <script>
+        (function () {
+            const images = [
+                "IMG20250126122245.jpg",
+                "1736422675161.jpg",
+                "IMG_20241029_111354.jpg"
+            ];
+
+            let currentIndex = 0;
+            const sliderImage = document.getElementById("sliderImage");
+
+            console.log("Total images:", images.length); // Debugging step
+
+            function changeImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                console.log("Changing to image index:", currentIndex, "Image:", images[currentIndex]); // Debug log
+
+                if (images[currentIndex]) {
+                    sliderImage.src = images[currentIndex];
+                }
+            }
+
+            setInterval(changeImage, 5000);
+        })();
+    </script>
+    /* JS to handle the scroll event */
+    <script>
+        window.addEventListener("scroll", function () {
+            let header = document.querySelector("header");
+            if (window.scrollY > 50) { // When scrolling down 50px
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+    <!-- testimonial -->
+
+
+
+    <!-- disbling th right click -->
+    <!-- <script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+</script> -->
+
+</body>
+
+</html>
